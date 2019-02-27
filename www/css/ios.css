@@ -52,6 +52,8 @@ padding-top:60px;
     margin: 0 auto ;
     display: block;
     align-content: center;
+
+    padding-top: 118px;
 	}
 
 .demo-statusbar {
@@ -61,18 +63,27 @@ padding-top:60px;
     z-index: 999;
     margin-top: 98px;
     margin-left: 90px;
-margin-left:calc(50% - 145px);
+margin-left:calc(50% - 160px);
     padding: 5px 0;
-    /* position: absolute; */
+    position: absolute;
 }
 .demo-device-ios{
     /* margin-top: 116px; */
-    margin-top: calc(50% - 200px);
+    /* margin-top: 0px;
     width: 292px;
     height: 500px;
-    margin-left:calc(50% - 145px);
+    margin-left:calc(50% - 160px); */
     /* margin: 0 auto; */
     /* margin-left: 91px; */
+
+        width: 292px;
+        margin: auto;
+        height: 500px;
+        /* margin-left: calc(50% - 160px); */
+        /* margin: 0 auto; */
+        /* margin-left: 91px; */
+        position: relative;
+        display: block;
 }
 .demo-github{
     border: 1px solid #3FB869;
