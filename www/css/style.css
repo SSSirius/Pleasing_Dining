@@ -60,7 +60,7 @@
 .rowline {
 	padding :0;
 	height:auto;
-	
+
 	width :100%;
 }
 /* collapse---bootstrap*/
@@ -186,11 +186,11 @@ a,a:link,a:link:hover,a:hover {
     color: #444;
     position: relative;
     z-index: 2;
-    
- 
-    
+
+
+
     border-width: 1px;
-  
+
     font-size: 14px;
 }
 
@@ -198,16 +198,16 @@ a,a:link,a:link:hover,a:hover {
     display: flex;
      justify-content:center;text-align:center;
     padding:5px;
-    
+
     background-color: #fff;
     color: #444;
     position: relative;
     z-index: 5;
- 
+
    border-bottom:1px solid #ddd;
     font-size: 14px;
 }
-.select-thin.active { 
+.select-thin.active {
     background-color: #3FB869 ;
      color: #fff;
      border-bottom:1px solid #3FB869;
@@ -236,7 +236,7 @@ a,a:link,a:link:hover,a:hover {
     font-weight:bold;
 }
 .fontright{text-align:right}
-.normal{ 
+.normal{
     font-weight:normal;}
 .icon-font{font-size:20px;
 
@@ -247,7 +247,7 @@ a,a:link,a:link:hover,a:hover {
 	color :#8F82BC ;
 } .yellow{
      color:#F4AD49;
-      
+
     }
 .rose {
     color: #db5565;
@@ -259,7 +259,7 @@ a,a:link,a:link:hover,a:hover {
 
   .red{
       color:#DB5565;
-      
+
     }
 .blue {
     color: #0BACD3;
@@ -270,20 +270,20 @@ a,a:link,a:link:hover,a:hover {
   }
    .red-bg{
      background-color :#DB5565;
-      
+
     }
      .yellow-bg{
      background-color:#F4AD49;
-      
+
     }
 
 
     .food-red{
         background-color:#DB5565;
         color:#FFF;
-       
+
     }
-   
+
    .food-yellow{
         background-color:#F4AD49;
         color:#FFF;
@@ -331,11 +331,11 @@ border-left-color:#8F82BC;
     /* --------foodstyle--------*/
 .foodtab{
         padding:15px 5px 20px 5px;
-		
-		
+
+
     }
 .food-1-title,.food-2-title,.food-3-title, .food-4-title,.food-5-title{
-     
+
 	   vertical-align: middle;
 	   font-size: 10px;
 	   line-height: 30px;
@@ -362,7 +362,7 @@ border-left-color:#8F82BC;
 .food-5-title::before {
     content: '05';
 	}
-   
+
     /* --------evaluation--------*/
     .evaluation-head{
         padding:0 10px;
@@ -387,7 +387,7 @@ border-left-color:#8F82BC;
 -webkit-box-shadow: 0 0 15px #fff;
 -moz-box-shadow: 0 0 15px #fff;
     }
-   
+
     .dash-bordergray{ border-bottom:1px dashed #ddd;
 }
     .no-border{
@@ -438,19 +438,19 @@ border-left-color:#8F82BC;
     border-radius:3px;
 }
      /* --------sporttabstyle--------*/
-     .tab-sport{ 
+     .tab-sport{
          margin-top:-1px;
-         color: rgba(51, 205, 95, 0.4); 
+         color: rgba(51, 205, 95, 0.4);
          border: 0 solid #33cd5f;
          background-color:#fff;
          border-width:0px 0px 0px 0px !important;
-         vertical-align:middle; 
+         vertical-align:middle;
          text-align: center;
          border-top-width: 2px;
          height:48px;
          line-height:48px;
          border-bottom-color:#ddd;
-         border-width:0px 0px 1px 0px !important; 
+         border-width:0px 0px 1px 0px !important;
      }
      .tab-sport.active{
           color: #33cd5f;
@@ -465,7 +465,7 @@ border-left-color:#8F82BC;
    vertical-align:middle;
     border-top:1px solid #ddd;
      border-right:0.5px solid #ddd;
-     
+
 }
 .calculatorend
 {padding-top:2px;
@@ -473,7 +473,7 @@ border-left-color:#8F82BC;
    vertical-align:middle;
     border-top:1px solid #ddd;
      border-right:0.5px solid #ddd;
-     
+
 }
 /*----------progress--------------*/
 progress{
@@ -484,15 +484,15 @@ progress{
   height:auto;
 }
 
-progress::-webkit-progress-bar{  
+progress::-webkit-progress-bar{
   background:#ddd;
   height:1px;
-}  
-progress::-webkit-progress-value{  
+}
+progress::-webkit-progress-value{
   background:#3FB869;
   transition:width 300ms;
   -webkit-transition:width 300ms;
-}  
+}
 
 /* --------tagstyle--------*/
 	.booksubhead {
@@ -572,7 +572,7 @@ item-radio:active {
 }
 .tag-aim {
 	background-color:#fff;
-	border-radius:15px;
+	border-radius:25px;
 	padding-right:5px;
 	padding-left:5px;
 	margin-left:5px;
@@ -748,7 +748,7 @@ item-radio:active {
 	padding-left:15px;
 }
 	/* listboard*/
-	
+
 .listitem.active {
 	color :#F05C5C;
 }
@@ -819,7 +819,7 @@ item-radio:active {
     min-width :25%;
     margin:3px 0px 2px 0px
 }
-   .canteen-button.active{ 
+   .canteen-button.active{
         border-radius:5px;
     background-color: #33cd5f;
     color: #fff;}
@@ -891,14 +891,14 @@ item-radio:active {
     position:relative;
 }
 .triangle_border_up span{
-    display:block; 
-    width:0; 
-    height:0; 
-    border-width:0 15px 15px; 
-    border-style:solid; 
+    display:block;
+    width:0;
+    height:0;
+    border-width:0 15px 15px;
+    border-style:solid;
     border-color:transparent transparent #fff;/*͸�� ͸��  ��*/
-    position:absolute; 
-    top:1px; 
+    position:absolute;
+    top:1px;
     left:-15px;
 }
 
@@ -911,7 +911,7 @@ item-radio:active {
 }
 
 .search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
-    color: #ffffff;   
+    color: #ffffff;
 }.bar.item-input-inset .item-input-wrapper input {
     width: 100%;
 }
@@ -924,7 +924,7 @@ item-radio:active {
 
 .item .has-error:focus {
   border-color: #843534;
- 
+
 }
 .errormsg{color:#a94442}
 /*--------------delete----------*/
