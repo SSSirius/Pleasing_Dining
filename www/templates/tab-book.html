@@ -1,0 +1,27 @@
+<ion-view view-title="Pleasing Dining" ng-init="bookinit()">
+    <ion-nav-bar class="bar-stable  bar-balanced bar  " style="text-align:left;color :#3FB869;">
+
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <ion-list>
+           
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/book/canteen/{{ item.id}}" ng-repeat="item in meals">
+                <div class=" col-center row" ng-model=" data.text" style="justify-content:space-between" >{{ item.text }}
+                <p class="pull-right col-60" style="color: #3FB869">{{item.info}}</p></div>
+                <i class="icon  icon-accessory" ng-class="hasinfo({{item.id}})? 'ion-chevron-right' : 'ion-plus'"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/book/evaluation" >
+                <div class=" col-center row" ng-model=" data.text" style="justify-content:space-between">
+                   Today's Evaluation
+                    <div class="green">{{item.info}}</div>
+                </div>
+                <i class="icon  icon-accessory ion-chevron-right"></i>
+            </ion-item>
+
+
+
+        </ion-list>
+    </ion-content>
+</ion-view>
+

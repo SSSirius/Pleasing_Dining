@@ -1,0 +1,63 @@
+<ion-view view-title="Basic Information" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs nav-direction="back">
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-buttons side="left">
+            <button class="button-clear back-button button" ng-click="Savemyinfo()">
+                <i class="icon ion-ios-arrow-back"></i> Back
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <ion-list>
+            <label class="item item-input" type="item-text-wrap">
+                <span class="input-label">Height</span>
+                <input class="col-50" type="text" style="text-align:right;" ng-model="user.height">CM
+
+            </label>
+            <label class="item item-input" type="item-text-wrap">
+                <span class="input-label">Weight</span>
+                <input class="col-50" type="text" style="text-align:right;" ng-model="user.weight">KG
+
+            </label>
+            <label class="item item-input" type="item-text-wrap">
+                <span class="input-label">Dream Weight</span>
+                <input class="col-50" type="text" style="text-align:right;" placeholder="Healthy Weight{{18.5 * (user.height / 100) * (user.height / 100) | number:1}} ~ {{24.9 * (user.height / 100) * (user.height / 100) | number:1}}" ng-model="user.dreamweight">KG
+
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">
+                   Level of Daily Activity 
+                </span>
+                <select ng-model="PALname" ng-change="getPal(PALname)" ng-init="PALname" ng-options="PALsel.name as PALsel.name for PALsel in PALsels"></select>
+            </label>
+            <ion-item class=" item-icon-right " type="item-text-wrap" style="background-color:#33cd5f;color:#fff;border:none;font-size:16px;">
+
+                <div class="col-center ">BMI</div>
+                <i class=" icon ion-ios-help-outline" ng-click="openModal()" style="font-size:20px;"></i>
+            </ion-item>
+
+           <ion-item type="item-text-wrap  " style="background-color:#33cd5f;color:#fff;border:none;padding-top:3px;">
+
+                <div class="row " style=" align-content:center;text-align:center;">
+                    <div style="margin :auto ">
+                        <span style="font-size:40px;">{{user.weight * 10000 / (user.height * user.height) | number:1}}</span><br />
+                        <span style="font-size:16px;">{{condition}}</span><br />
+                        <span style="font-size:10px;">Updated at {{datetoday}}</span>
+
+                    </div>
+
+                </div>
+            </ion-item>
+
+          <!--    <ion-item class="">
+                <div class="row ">
+                   <div class="row-title col-50 ">健康体重范围</div>
+                    <div class="col-50 col-center fontright padding-right">{{user.weightrangemin | number:2}}KG ~ {{user.weightrangemax | number:2}}KG</div>
+                </div>-->
+
+
+
+
+        </ion-list>
+    </ion-content>
+</ion-view>

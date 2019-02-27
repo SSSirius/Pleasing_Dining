@@ -1,0 +1,52 @@
+<ion-view view-title="Sign Up" style="top:0;bottom :0;left :0;right :0;width:100%">
+    <ion-nav-bar class="bar bar-health bar-balanced bar-stable  ">
+      
+    </ion-nav-bar>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="tologin()">
+            Log In
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="stable-bg">
+        <form name="signupForm" ng-submit="signupForm()" novalidate>
+            <!-- USERNAME -->
+            <label class="item item-input" ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                <span class="padding-right"><i class="col mid icon ion-ios-person-outline xxxl-font balanced"></i></span>
+                <input type="text" name="username" class="form-control" ng-model="user1.username" placeholder="Account" ng-minlength="3" ng-maxlength="10" required>
+                <i ng-show="user1.username.length" class=" ion-android-close input-button" ng-click="clearname()"></i>
+             </label>
+            <div ng-show="signupForm.username.$error.maxlength" class="padding errormsg">too long</div>
+            <div ng-show="signupForm.username.$error.minlength" class="padding errormsg">too short</div>
+           
+            <!-- PASSWORD -->
+            <label class="item item-input" ng-class="{ 'has-error' : signupForm.password.$invalid && !signupForm.password.$pristine }">
+                <span class="padding-right"><i class=" col mid icon ion-ios-locked-outline xxxl-font balanced"></i></span>
+                <input type="password" name="password" class="form-control" ng-model="user1.password" required ng-minlength="6" ng-maxlength="16" placeholder="Password">
+                <i ng-show="user1.password.length" class=" ion-android-close input-button" ng-click="clearpas()"></i>
+            </label>
+            <div ng-show="signupForm.password.$error.minlength" class="padding errormsg">too long</div>
+            <div ng-show="signupForm.password.$error.maxlength" class="padding errormsg">too short</div>
+           
+
+            <!-- REPEATPASSWORD -->
+            <label class="item item-input" ng-class="{ 'has-error' :  error }">
+                <span class="padding-right"><i class=" col mid icon ion-ios-locked xxxl-font balanced"></i></span>
+                <input type="password" ng-change="same()" name="repassword" class="form-control" ng-model="user1.repassword" ng-minlength="6" placeholder="Repeat Password" ng-maxlength="16" required>
+                <i ng-show="user1.repassword.length" class=" ion-android-close input-button" ng-click="clearrepas()"></i>
+             </label>
+            <div ng-show="error" class="padding errormsg">Passwords are different</div>
+            <div ng-show="{{error_message3}}" class=" padding errormsg">{{error_message3}}</div>
+            <div class="padding">
+
+            </div>
+        </form>
+
+        <div class="padding">
+            <button class="button button-block button-balanced" ng-click="signUp(user1)">
+                Signup
+            </button>
+            
+        </div>
+    </ion-content>
+</ion-view>
+ 

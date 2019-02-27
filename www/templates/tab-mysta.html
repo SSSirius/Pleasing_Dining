@@ -1,0 +1,95 @@
+<ion-view view-title="My State" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+        <ion-list>
+           
+              
+                <label class="item item-input item-select">
+                    <span class="input-label">
+                        My State
+                    </span>
+                    <select ng-model="user.station" ng-change="getSta(item)" ng-init="user.station" ng-options="stationsel.name as stationsel.name for stationsel in stationsels"></select>
+                </label>
+       
+            <div class="listboard-head ">
+                <div class="left-green" style=" margin-top :10px;padding-left :5px;font-size :16px;">Dietitian's Advices</div>
+            </div>
+            <ion-item class="" type="">
+                
+                   
+                <div class="row" style=" color:#3FB869">Distribution of Your Meals </div>
+                    <div class="row mid">
+                        <div class="col">
+                            <div class=" rowline s-font">Breakfast</div>
+                            <div class="  rowline">{{sta.breakf}}</div>
+                          
+                        </div>
+                        <div class="col" ng-show="havemadd()">
+                            <div class=" rowline s-font">Extra Meal</div>
+                            <div class="  rowline">{{sta.morningadd}}</div>
+                        </div>
+                        <div class="col">
+                            <div class=" rowline s-font">Lunch</div>
+                            <div class=" rowline">{{sta.lunch}}</div>
+                            
+                        </div>
+                        <div class="col" ng-show="haveaadd()">
+                            <div class="  rowline s-font">Extra Meal</div>
+                            <div class=" rowline">{{sta.afternoonadd}}</div>
+                        </div>
+                        <div class="col">
+                            <div class="  rowline s-font">Dinner</div>
+                            <div class="  rowline">{{sta.dinner}}</div>
+                           
+                        </div>
+                    </div>
+              
+                <div class="row marginTop5" style=" color:#3FB869">
+                    Major Nutrients
+                </div>
+                    <div class="row mid">
+                        <div class="col-33">
+                            <div class=" col s-font">Carbohydrate</div>
+                            <div class=" col">{{sta.protein}}</div>
+                        </div>
+                        <div class="col-33">
+                            <div class=" col s-font">Fat</div>
+                            <div class=" col">{{sta.fat}}</div>
+                        </div>
+                        <div class="col-33">
+                            <div class=" col s-font">Protein</div>
+                            <div class=" col">{{sta.carbohy}}</div>
+                        </div>
+                    </div>
+                <div class="row marginTop5" style=" color:#3FB869">
+                    Recommended Food
+                </div>
+                <div class="rowline  ">
+                    <div class="row item-text-wrap evaluation-border-line marginBottom5">
+                        <div class=" col-center col-25 s-font">Fruits</div><div class=" col-75 s-font">{{sta. foodfruit}}</div>
+                    </div>
+                    <div class="row item-text-wrap evaluation-border-line marginBottom5">
+                        <div class=" col-center col-25 s-font">Protein</div><div class=" col-75 s-font">{{sta. foodprotein}}</div>
+                    </div>
+                    <div class="row item-text-wrap evaluation-border-line marginBottom5">
+                        <div class="col-center col-25 s-font">Cereal</div><div class=" col-75 s-font">{{sta.foodmain}}</div>
+                    </div>
+                    <div class="row item-text-wrap ">
+                        <div class="col-center col-25 s-font">Fat</div><div class=" col-75 s-font">{{sta.foodfat}}</div>
+                    </div>
+                </div>
+                    
+
+               
+              
+            </ion-item>
+
+           
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+<ion-view view-title="Me" havetabs hide-tabs nav-direction="forward">
+    <ion-nav-bar class="bar-stable  bar-balanced bar  " style="text-align:left;color :#3FB869;">
+
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <ion-list>
+            <ion-item class="item-thumbnail-left " type="item-text-wrap" href="#/tab/me/aboutme">
+                <img ng-src="{{user.img}}">
+                <div class="row ">
+                    <div class="col-title col">
+                        <div class="col" style="font-size:14px;">{{user.nickname}}</div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </ion-item>
+            <!--<div class="col-33" style=" position:absolute;z-index:6 ;top:20px;right:30px;">
+                <button class=" button button-block button-balanced button-small mid" ng-click="daka(item)" ng-class="{{user.havechecked}}==1? 'disabled':(isChecked(item)?'disabled':'')" style="margin-top :0;font-size:14px;">
+                    {{dakatext}}
+                </button>
+            </div>-->
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/myinfo">
+                <div class="col-center ">Basic Information</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/myaim">
+                <div class="col-center ">My Goals</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/mysta">
+                <div class="col-center ">My State</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+           
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/reflect">
+                <div class="col-center ">Feedback</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/login">
+                <div class="col-center red ">Log Out</div>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

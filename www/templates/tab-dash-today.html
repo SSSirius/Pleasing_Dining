@@ -1,0 +1,58 @@
+<ion-view view-title="Today's Intake" hide-tabs>
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+
+    <ion-content class="light-bg" >
+        <ion-list>
+            <section id="cd-timeline" class="cd-container" >
+
+                <div class="cd-timeline-block" ng-repeat="item in nutritions">
+                    <div class="cd-timeline-icon text-center"  ng-class="{{item.status}}==1? 'food-yellow':({{item.status}}?'food-red':'food-green')">
+                        <i class="icon ion-heart"></i>
+                    </div>
+                    <!-- cd-timeline-img               所有数据从后台提取,微量元素数据结构待讨论，先写着 -->
+                    <div class="cd-timeline-content ">
+                        <div class="m-font row">
+                            <div class=" col-66">{{item.name}}  Intake</div>
+                            <div class="col-33 mid" ng-class="{{item.status}}==1? 'yellow':({{item.status}}?'red':'green')">{{item.state}}</div>
+                        </div>
+                        <!-- <div class="marginTop5 row gray">carbohydrate</div> -->
+
+                    </div>
+                </div>
+               
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-icon text-center food-red ">
+                        <i class="icon ion-chatbox"></i>
+                    </div>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content " >
+                        <div class="m-font row">
+                            <div class=" col-66"> Intake of Trace Elements</div>
+                            <div class="col-33 mid" ng-show="{{judge.status}}==3? 1:0" ng-class="'red'">No Data</div>
+                        </div>
+                        <div class="m-font row marginTop10 red" ng-show="{{judge.status - 3}}">
+                            <div class=" col-66 marginBottom5">Excessive intake：</div>
+                        </div>
+                            <div class="row" ng-show="{{judge.status - 3}}"><span class="red ">Na 115%</span>&nbsp&nbspAdvices:</div>
+                            <div class="row" ng-show="{{judge.status - 3}}">Eating less kelp and salt food</div>
+                       
+                        <div class="m-font row marginTop10 violet" ng-show="{{judge.status - 3}}">
+                            <div class=" col-66 marginBottom5">Inadequate Intake：</div>
+                        </div>
+                      
+                        <div class="row" ng-show="{{judge.status - 3}}"><span class="violet ">VC 80%</span>&nbsp&nbspAdvices:</div>
+                            <div class="row" ng-show="{{judge.status}}==3? 0:(1)">Eating fresh fruits</div>
+                    </div>
+                </div>
+            </section>
+        </ion-list>
+    
+    </ion-content>
+   
+</ion-view>
+

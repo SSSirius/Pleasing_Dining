@@ -1,0 +1,73 @@
+<ion-view view-title="Sports">
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+
+        </ion-nav-back-button>
+      
+    </ion-nav-bar>
+ 
+
+    <ion-content class="stable-bg" style="bottom:60px; ">
+        <ion-list>
+            <ion-item class="" type="item-text-wrap">
+                <div class="col-center col mid marginBottom10 xl-font">
+                    To Accieve
+                    <span class="green"> [{{user.station}}]</span>
+                </div>
+                <div class=" marginBottom5 row" style="justify-content:space-between">
+                    <div>You Should Consume </div>
+                    <div>
+                        <span class="green">{{user.qk | number:2}}</span>   
+                        Kcal.
+                        </div>
+                </div>
+                <progress min="0" max="{{user.qk}}" value="{{user.qk}}" style="margin:0"></progress>
+                <div class=" marginTop5  row" style="justify-content:space-between">
+                    <div>Consumption at Present </div>
+                    <div>
+                        <span class="green">{{user.energy() | number:2 }}</span>  
+                         Kcal.
+                    </div>
+                </div>
+                <progress min="0" max="{{user.qk}}" value="{{user.energy()}}" style="margin:0"></progress>
+            </ion-item>
+        </ion-list>
+        <div class="list">
+            <div class="listboard-head stable-bg" ion-affix data-affix-within-parent-with-class="list">
+
+            <div class="left-green" style="padding-left :5px;font-size :16px; margin-top:10px;margin-bottom:10px;display:flex">
+                <div class="padding-right"> Record</div> 
+                <a class=" red icon ion-trash-a padding-left mid" ng-show="results.length!==0" style="padding:0;font-size:20px;padding-right:10px; width: 40px;right: 0px;position:absolute" ng-click="sport.showDelete = !sport.showDelete"></a></div>
+           
+
+        </div> <ion-list show-reorder="sport.showDelete">
+
+    <ion-item ng-repeat="item in sports.items as results" class="item-remove-animate item-borderless item-text-wrap" style="padding:0">
+        <div style="margin:-5px -30px -5px 0">
+            <div class="list-thin ">
+                <div class="col ">{{item.name}}</div>
+                <div class="col padding-left ">{{item.time}}Mins</div> 
+                <div class="col padding-left" style="text-align:right">{{item.costqk | number:2}}Kcal.</div>
+
+            </div>
+            <progress class="list-thin" min="0" max="{{user.qk}}" value="{{item.costqk}}" style="margin:0;padding-bottom:0;padding-top:0;"></progress>
+        </div>
+
+        <ion-reorder-button class=" ion-ios-minus-outline button-clear button-assertive " ng-click="remove(item)"></ion-reorder-button>
+
+    </ion-item>
+                 
+
+</ion-list><ion-item class="item-borderless stable-bg" ng-if="results.length == 0">
+    <div class="padding mid animate-repeat gray"> No Record</div>
+
+</ion-item>
+     </div>
+    </ion-content>
+    <ion-footer-bar class="row stable-bg" style="justify-content: center;bottom:49px;z-index: 5;padding-bottom:5px; ">
+        <a style="width:35%;align-content:center;vertical-align:central;border:none;border-radius:15px;" class=" button-balanced button " href="#/tab/sport/add">
+            <i class="icon ion-plus-round icon-accessory"></i>
+        </a>
+    </ion-footer-bar>
+</ion-view>
+

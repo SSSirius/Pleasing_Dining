@@ -1,0 +1,21 @@
+<ion-view view-title="Gender" style="top:0;bottom :0;left :0;right :0;width:100%" notabs>
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+
+        <ion-nav-back-button class="button-clear">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <div class="list">
+
+            <ion-radio ng-repeat="item in gender"
+                       ng-value="item.value"
+                       ng-model="user.gender"
+                       ng-change="GenderChange()">
+                {{ item.text }}
+            </ion-radio>
+
+        </div>
+    </ion-content>
+</ion-view>

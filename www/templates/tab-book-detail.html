@@ -1,0 +1,157 @@
+﻿<ion-view view-title=" {{floor.name}}" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
+    <ion-nav-bar class="bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+           {{canteen.name}}
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <div class="row ">
+        <div class="col col-25">
+
+            <ion-content class="has-header stable-bg "  style="overflow: hidden;bottom:30px;top:44px;width:25%">
+                <div class="  rowline" >
+                    <div class="food-red foodtab mid col-xs-9 " ng-click="scrollTo(1)" >
+                        <div class="food-1-title xs-font">Cereal
+                        </div>
+                    </div><div class="food-tag-red col-xs-2" ng-show="(1 === tag)?true:false"></div>
+                    <div class="food-yellow foodtab mid col-xs-9" ng-click="scrollTo(2)"> <div class="food-2-title xs-font">Meat</div></div><div class="food-tag-yellow col-xs-2" ng-show="(2 == tag)?true:false"></div>
+                    <div class="food-green foodtab mid col-xs-9 " ng-click="scrollTo(3)"><div class="food-3-title xs-font">Vege</div> </div><div class="food-tag-green col-xs-2" ng-show="(3 == tag)?true:false"></div>
+                    <div class="food-blue foodtab mid col-xs-9" ng-click="scrollTo(4)"><div class="food-4-title xs-font">Mixed</div></div><div class="food-tag-blue col-xs-2" ng-show="(4 == tag )?true:false"></div>
+                    <div class="food-violet foodtab mid col-xs-9" ng-click="scrollTo(5)"> <div class="food-5-title xs-font">Other</div></div><div class="food-tag-violet col-xs-2" ng-show="(5 == tag)?true:false"></div>
+              
+                </div>
+            </ion-content>
+        </div>
+        <div class="col col-75">
+            <ion-content  on-swipe="getScrollPosition()" on-scroll="getScrollPosition()" class="has-header row stable-bg" style="width:80%;left:21%;bottom:30px;top:44px;" delegate-handle="mainScroll">
+                <div class="row" id="1">
+                    <div class="rowline" style="bottom:0px;margin:0px;">
+                        <div class=" col-xs-6" ng-repeat="food in foods | filter: {category: 0 }" ng-click="getfood({{food.id}})">
+                            <div class=" col-xs-11 " style="margin-top:10%">
+                                <img class="list-img " ng-src="{{food.face}}" style="width :100%" />
+                                <div class="row " style="font-size :14px;">
+                                    <div class="col-90 xs-font ellip">{{food.name}}</div>
+                                    <div class="col-10 " style="font-size :20px;">
+                                        <i class=" icon col-xs-6 ion-ios-plus-outline green" ng-click="openModal({{food.id}})"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="2">
+                    <div class="rowline" style="bottom:0px;margin:0px;">
+                        <div class=" col-xs-6" ng-repeat="food in foods | filter:{category:1 } " ng-click="getfood({{food.id}})">
+                            <div class=" col-xs-11 " style="margin-top:10%">
+                                <img class="list-img " ng-src="{{food.face}}" style="width :100%" />
+                                <div class="row " style="font-size :14px;">
+                                    <div class="col-90 xs-font ellip">{{food.name}}</div>
+                                    <div class="col-10 " style="font-size :20px;">
+                                        <i class=" icon col-xs-6 ion-ios-plus-outline green" ng-click="openModal({{food.id}})"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="3">
+                    <div class="rowline" style="bottom:0px;margin:0px;">
+                        <div class=" col-xs-6" ng-repeat="food in foods | filter: {category: 2 }" ng-click="getfood({{food.id}})">
+                            <div class=" col-xs-11 " style="margin-top:10%">
+                                <img class="list-img " ng-src="{{food.face}}" style="width :100%" />
+                                <div class="row " style="font-size :14px;">
+                                    <div class="col-90 xs-font ellip">{{food.name}}</div>
+                                    <div class="col-10 " style="font-size :20px;">
+                                        <i class=" icon col-xs-6 ion-ios-plus-outline green" ng-click="openModal({{food.id}})"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="4">
+                    <div class="rowline" style="bottom:0px;margin:0px;">
+                        <div class=" col-xs-6" ng-repeat="food in foods | filter: {category:3 }" ng-click="getfood({{food.id}})">
+                            <div class=" col-xs-11 " style="margin-top:10%">
+                                <img class="list-img " ng-src="{{food.face}}" style="width :100%" />
+                                <div class="row " style="font-size :14px;">
+                                    <div class="col-90 xs-font ellip">{{food.name}}</div>
+                                    <div class="col-10 " style="font-size :20px;">
+                                        <i class=" icon col-xs-6 ion-ios-plus-outline green" ng-click="openModal({{food.id}})"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                 <div class="row" id="5">
+                    <div class="rowline" style="bottom:0px;margin:0px;">
+                        <div class=" col-xs-6" ng-repeat="food in foods | filter: {category:4}" ng-click="getfood({{food.id}})">
+                            <div class=" col-xs-11 " style="margin-top:10%">
+                                <img class="list-img " ng-src="{{food.face}}" style="width :100%" />
+                                <div class="row " style="font-size :14px;">
+                                    <div class="col-90 xs-font ellip">{{food.name}}</div>
+                                    <div class="col-10 " style="font-size :20px;">
+                                        <i class=" icon col-xs-6 ion-ios-plus-outline green" ng-click="openModal({{food.id}})"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <span style="height:20px;width:100%;display:block"></span> 
+            </ion-content>
+        </div>
+    </div>
+    <div class="light-bg " style=" z-index: 1; bottom:0;min-height:30px;position:fixed;width:100%;left:0; border-top:1px solid #969696;bottom:0px;">
+        <div class="col-xs-12 " ng-click="Showsel(item)" style="height:30px">
+            <div class="row" style="position:relative;margin-top:-20px; padding-bottom:0px;">
+                <div class="mid " style="margin:auto;z-index:2;">
+                    <div class="triangle_border_up" style="margin-top:0px;margin-bottom:0px;z-index:6">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="line-height:20px;margin-left:auto;margin-right:auto;margin-top:5px;">
+                <div class="green" style="font-size:12px;margin:auto;z-index:6">
+                    Selected Dish <i class="fa fa-shopping-basket"></i>
+                </div>
+            </div>
+
+        </div>
+        <div ng-show="isShowsel(item)" style="position:relative">
+            <ion-scroll class="scroll" style="max-height:150px;width:100%">
+                <div class="row animate-repeat remove-animate" ng-repeat="item in items as results   track by $index " style="justify-content:space-between">
+                    <div class="col-center col-offset-10 col-50 ellip " style="font-size:14px;">
+                        <i class=" icon ion-ios-close-outline padding-right violet" ng-click="ItemDelete(item)" style="font-size:20px;"></i>
+                        {{item.name}}
+                    </div>
+                    <div class="col col-33 ">
+                        {{item.count | number:1}}&nbsp;Dish<span ng-show="{{item.count}}>1">es</span>
+                    </div>
+                </div>
+
+                <div class="padding mid gray" ng-if="results.length == 0"> Nothing...</div>
+
+
+            </ion-scroll>
+            <div class="mid row " style="margin:auto;z-index:2;">
+                <div class="tag-evaluation-triangleup ">
+
+                </div>
+
+            </div>
+              <div class="mid row " style="justify-content:center;">
+                  <a class="mid tag-evaluation" ng-click="SureMsg()" >
+                     Save
+                  </a>
+            </div>
+
+        </div>
+    </div>
+</ion-view>

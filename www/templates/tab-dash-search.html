@@ -1,0 +1,47 @@
+<ion-modal-view class="has-header" style="width:100%;height:100%;left:0;right:0;top:0;bottom:0">
+
+    <div class="bar bar-header item-input-inset bar-balanced startbar">
+        <div class="item-input-wrapper">
+            <i class="fa fa-search placeholder-icon" style="color :#3fb869;font-size :18px;"></i>
+            <input type="text" id="searchbar"
+                   placeholder="Search"
+                   ng-model="data.search"
+                   class="full-width "
+                   ng-init="" >
+            <i ng-show="data.search.length"
+               class=" ion-android-close input-button"
+               ng-click="data.search = ''"></i>
+        </div>
+        <button class="button button-clear" ng-click="closeModal();">
+            Cancel
+        </button>
+       
+        
+    </div>
+    <ion-content class="light-bg has-header">
+       
+       
+
+        <a class="item-icon-right item m-font" ng-show="data.search.length" href="#/tab/dash/food/{{item.id}}" ng-click="closeModal();" ng-repeat="item in dishs | filter:{ name: data.search } as results">
+
+            <div class="row" style="justify-content:space-between">
+                <div class="col"> {{item.name}}</div>
+
+            </div>
+
+            <i class="icon ion-chevron-right icon-accessory icon-right "></i>
+
+        </a>
+            
+        <ion-item class="item-borderless animate-repeat" ng-if="results.length == 0">
+            <div class="padding mid">
+                {{ message() }}
+            </div>
+
+        </ion-item>
+        </ion-content>
+
+
+
+</ion-modal-view>
+

@@ -1,0 +1,122 @@
+<ion-view view-title="Evaluation" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs ng-init="evainit()">
+    <ion-nav-bar class="bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="has-header light-bg ">
+        <div class="row">
+            <div class="evaluation-head gray-border-bottom">
+                <div style="display:flex">
+                    <h4 class="left-green col-80">{{today}}   Your Marks:</h4>
+                    <h4 class="green col-20 ">94</h4>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left padding-right">
+            <div class="padding gray-border-bottom light-bg">
+                <div class="row" style="justify-content:space-between;font-size:14px;">
+                    <div class="col-33">Current Selection</div>
+
+                    <div class="col-33 mid " ng-click="Openmeal()">
+                        {{ selectmeal }}
+                        <i class="fa  green" ng-class="isOpen() ? 'fa-chevron-up' : 'fa-chevron-down'" style="right:18px;position:absolute;margin-top:5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="isOpen()" class="rowline light-bg " style="position:absolute;width:32%;border-radius:5px;padding-top:0px ;right :20px;margin-top:2px;border: 1px solid #ddd;">
+                <div class="select-thin mid" ng-repeat="item in meals" ng-click="selcanteen({{item.id}})" ng-class="ismealSelected({{item.id}})?'active':''">
+                    {{ item.text }}
+                </div>
+            </div>
+
+
+
+        </div>
+        
+        <div class="rowline">
+            <div class="padding evaluation gray-border-bottom" style="padding-bottom:30px;color:#444;">
+                <div class="row ">
+
+                    <div class="col-33 col-offset-33 evaluation-line evaluation-row">{{ selectmeal }}Intake</div>
+                    <div class="col-25 evaluation-line evaluation-row">Standard Value</div>
+                </div>
+                <div class="row ">
+                    <div class="col-33  evaluation-border-row">
+                        <div class="rowline evaluation-line">Total Calories</div>
+                        <div class="rowline evaluation-line">Carbohydrate</div>
+                        <div class="rowline evaluation-line">Protein</div>
+                        <div class="rowline evaluation-line">Fat</div>
+                    </div>
+                    <div class="col-33 evaluation-row evaluation-border-row">
+                        <div class="rowline evaluation-line green">{{meal_energy | number: 2}}Cal.</div>
+                        <div class="rowline evaluation-line green">{{meal_carbo | number: 2}}g
+                            <!--（{{user.XX * 100| number :1 }}%）-->
+                        </div>
+                        <div class="rowline evaluation-line green">{{meal_protein | number: 2}}g</div>
+                        <div class="rowline evaluation-line green">{{meal_fat | number: 2}}g</div>
+                    </div>
+                    <div class="col-33 evaluation-row">
+                        <div class="rowline evaluation-line green">{{meal_energy_need | number: 2}}Cal.</div>
+                        <div class="rowline evaluation-line green">{{meal_carbo_need | number: 2}}g</div>
+                        <div class="rowline evaluation-line green">{{meal_protein_need | number: 2}}g</div>
+                        <div class="rowline evaluation-line green">{{meal_fat_need | number: 2}}g</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="list">
+            <div class=" stabe-bg s-font padding-left padding-right" ion-affix data-affix-within-parent-with-class="list">
+
+                <div class=" green" style="padding-left :10px;font-size :16px; margin-top:10px;margin-bottom:10px;display:flex">
+                    <div class="left-green padding-right">Record</div>
+                    <a class=" red icon ion-trash-a padding-left mid" ng-show="results.length!==0" style="padding:0;font-size:20px;padding-right:10px; width: 40px;right: 0px;position:absolute" ng-click="sport.showDelete = !sport.showDelete"></a>
+                </div>
+
+
+            </div>
+            <ion-list show-reorder="sport.showDelete">
+
+                <ion-item ng-repeat="item in userdish | filter:{ meal:mealSelected } as results" class=" item-remove-animate item-borderless item-text-wrap" style="padding:0;">
+                    <div style="margin:-10px -30px -10px 0;">
+                        <div class="list-thin row">
+                            <div class="col ">{{item.name}}</div>
+
+                            <div class="col padding-left" style="text-align:right">{{item.count}}dish</div>
+
+                        </div>
+                    </div>
+
+                    <ion-reorder-button class=" ion-ios-minus-outline button-clear button-assertive " ng-click="remove(item)" style="margin-top:1px;"></ion-reorder-button>
+
+                </ion-item>
+                <ion-item class="item-borderless" ng-if="results.length == 0">
+                    <div class="padding mid">
+                        No Record
+                    </div>
+
+                </ion-item>
+
+            </ion-list>
+        </div>
+
+
+        <!-- <div class="evaluation-head ">
+              <div class="row">
+                  <div style="height:auto">
+                      <h4 class="left-rose rose">建议</h4>
+                  </div>
+                  <ol class="col-75" style="font-size:10px;">
+                      <li class="">食物多样，谷类为主，粗细搭配</li>
+                      <li class="">多吃蔬菜水果和薯类</li>
+                      <li class="">每天吃奶类、大豆或其制品</li>
+                      <li class="">常吃适量的鱼、禽、蛋和瘦肉</li>
+                  </ol>
+              </div>
+          </div>-->
+
+    </ion-content>
+
+
+</ion-view>

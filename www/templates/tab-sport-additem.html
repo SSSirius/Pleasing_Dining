@@ -1,0 +1,53 @@
+<ion-modal-view style="top:15%;bottom:15%;height:70%;min-height: 370px;" >
+
+    <div class="bar bar-header stable-border row mid green" style="justify-content:space-between;height:30px;font-size:14px;">
+         <i class="icon ion-ios-arrow-left col-10 " ng-click="closeModal()" style="font-size:20px;"></i> 
+        <div class="col-80 ">Add</div>
+        <i class="icon ion-ios-checkmark-outline col-10 " ng-click="addsport()" style="font-size:20px;"></i>
+    </div>
+
+
+    <ion-content class="stable-bg "  overflow-scroll="true" style="overflow: hidden;height:auto; top: 30px;">
+        <div class="padding" style="position:relative">
+            <div class="padding mid green col-33 col-offset-33" style="font-size:50px"><img ng-src="{{nowitem.icon}}"  style="width:100%;height:100%;"></div>
+            <div class="row mid " style="justify-content:center"><div>{{nowitem.name}}</div></div>
+            <div class=" mid row" style="justify-content:center"><div class="red">{{nowitem.proqk}}</div>  Kcal./60Mins</div>
+      </div>
+
+        <div class="rowline  mid" style="margin:0px;position:fixed;padding-bottom:0px;bottom:0px;">
+            <div class="light-bg row " style="position:relative;margin-top:-10px;justify-content:space-between">
+                <div class="col col-33 col-offset-25 mid " ><div class="red" style="font-size:30px">{{min}}</div> <div style="position:absolute;left:50%;top:10%;">Min</div></div>
+                <div class=" col col-40 mid gray" >{{energy}}  Kcal.</div>
+        </div>
+        <div class="rowline xl-font" style="margin-top:0px;padding:0px;">
+            <div class="rowline light-bg" style="margin-bottom:-5px;border-radius:5px;padding:0px;">
+                <div class=" row" style="padding:0">
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(1)">1</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(2)">2</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(3)">3</div>
+                </div>
+                <div class=" row" style="padding-left:0;padding-right:0;padding-bottom:0">
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(4)">4</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(5)">5</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(6)">6</div>
+                </div>
+
+                <div class="row" style="padding-left:0;padding-right:0;padding-bottom:0">
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(7)">7</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(8)">8</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(9)">9</div>
+                </div>
+
+                <div class=" row" style="padding:0">
+                    <div class="col calculator padding marginBottom0" ng-click="point()">.</div>
+                    <div class="col calculator padding marginBottom0" ng-click="calculate(0)">0</div>
+                    <div class="col calculator padding marginBottom0" ng-click="clear()"><i class="icon ion-ios-arrow-left "></i></div>
+                </div>
+                </div>
+            </div>
+        </div>
+</ion-content>
+
+
+
+</ion-modal-view>

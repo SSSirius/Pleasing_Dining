@@ -1,0 +1,144 @@
+<ion-view class="background" view-title="Dashboard" ng-init="jieqi()" havetabs>
+    <ion-header-bar class="bar bar-header item-input-inset bar-balanced startbar ">
+     <a class="col-25 xs-font mid headcontent" style="line-height: 1.3;">
+           What for today?
+        </a>
+        <label class="item-input-wrapper " style="margin-top :2px;margin-bottom :2px;">
+            <i class="fa fa-search placeholder-icon" style="color :#3fb869;font-size :18px;"></i>
+            <input type="search" placeholder="Searching" ng-focus="openModal();" readonly="readonly">
+            <i ng-show="search.length"
+               class="ion-android-close input-button"></i>
+        </label>
+
+    </ion-header-bar>
+
+    <ion-content class="stable-bg scroll-content ionic-scroll  has-header has-tabs {{haTabs}}">
+        <div class=" listboard ">
+
+                <div class="listboard-head ">
+                    <div class=" left-green">
+                       
+                           The Season is
+                            <div class="pull-right padding-right green">
+
+                               Winter</div>
+                            </div>
+                           
+                       
+                </div>
+           
+            <div class="listboard-body ">
+                <div class="row">
+                    Ingredients in This Season
+                </div>
+
+                <div class="row green s-font">
+                   Pumpkin, Grapefruit, Red Cabbage, Broccoli
+                </div>
+            </div>
+ 
+            </div>
+          
+            </div>
+        <div class=" listboard item-text-wrap" style="background-color:#33cd5f;color:#fff;padding-top:10px;padding-bottom:0;border-color: #41be6c">
+            <div class="row " style=" align-content:center;text-align:center;">
+                <div class="col" style="margin :auto ">
+                    <div style="font-size:14px;">Dream Weight：{{user.dreamweight}}KG</div>
+                    <div class="row" style="justify-content: center ">
+                        <div class=" tag-aim shine padding-10 margin-10" style="width:50%;padding:10px">
+                            {{user.station}}
+                        </div>
+                    </div>
+                    <!-- <div style="font-size:10px;margin-top:3px;">开始时间 {{user.stadate}} </div> -->
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+			
+        <div class=" listboard ">  
+            <a href="#/tab/dash/aim">
+                <div class="listboard-head ">
+                    <div class=" left-green">
+                        My Goals
+
+                        <i class="icon ion-chevron-right icon-accessory icon-right "></i>
+                    </div>
+                </div>
+            </a>
+			
+			
+				
+            <div class="listboard-body ">
+			
+			
+			
+			
+                <div class="row">
+                    <div class="rowline mid">
+                        <div class="col-xs-4 " ng-repeat="aim in user.aims">
+                            <div class="tag-greenwhite ellip">{{aim}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row marginTop5 " style="padding-bottom:0">
+                    <div class=" col" style="padding-bottom:0">
+                        Recommended Ingredients
+                    </div>
+                </div>
+                <ion-scroll direction="x">
+                    <div class="row" style="padding:0px;">
+                        <a class="col" style="max-width:33%;min-width:25%" ng-repeat="material in user.material_rec | limitTo :8" href="#/tab/dash/food/{{material.foodid}}">
+                            <div class="tag-greenwhite">{{material.foodname}}</div>
+                        </a>
+
+                    </div>
+                </ion-scroll>
+            </div>
+			
+
+        </div>
+        <div class="listboard">
+            <a href=" #tab/dash/today">
+                <div class="listboard-head ">
+                    <div class=" left-green">
+                       Today's State
+                        <i class="icon ion-chevron-right icon-accessory icon-right "></i>
+                    </div>
+                </div>
+            </a>
+            <div class="listboard-body ">
+                <div class="row s-font " style="padding-top:0">
+                    <div class="col" style="padding-top:0">
+                        <div class="rowline mid">Carbohydrate</div>
+                        <div class="rowline mid">{{todaydishes.today_carbo / user.carbo_need * 100| number :1 }}%</div>
+                    </div>
+                    <div class="col " style="padding-top:0">
+                        <div class="rowline mid">Protein</div>
+                        <div class="rowline mid">{{todaydishes.today_protein / user.protein_need * 100| number :1 }}%</div>
+                    </div>
+                    <div class="col " style="padding-top:0">
+                        <div class="rowline mid">Fat</div>
+                        <div class="rowline mid">{{todaydishes.today_fat / user.fat_need * 100| number :1 }}%</div>
+                    </div>
+                    <div class="col " style="padding-top:0">
+                        <div class="rowline mid">Calories</div>
+                        <div class="rowline mid">{{todaydishes.today_energy / user.energy_need * 100| number :1  }}%</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+     
+
+
+    </ion-content>
+
+</ion-view>
+

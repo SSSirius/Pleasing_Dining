@@ -1,0 +1,51 @@
+<ion-view view-title="My Profile"align-title="left" style="top:0;bottom :0;left :0;right :0;width:100%" hide-tabs>
+    <ion-nav-bar class="bar-health bar-balanced bar-stable  bar ">
+        <ion-nav-back-button class="button-clear">
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <ion-list >
+            <ion-item class="item-avatar-right" item-icon-right" type="item-text-wrap" ng-click="actshow()">
+                <img ng-src="{{user.img}}">
+                <div class="row ">
+                    <div class="col-title col">
+                        <div class="col col-center ">Avatar</div>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/aboutme/name">
+                <span class="col-50" style=" float :right ;text-align:right " >{{user.nickname}}</span>
+                <div class="col-center ">Nickname</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+          
+            <ion-item class="item-icon-right">
+                <span class="col-50" style=" float :right ;text-align:right ">{{user.name}}</span>
+                 <div class="col-center ">Account</div>
+
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+
+
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/aboutme/uni">
+                <span class="col-50" style=" float :right ;text-align:right ">{{user.uni}}</span>
+                <div class="col-center ">University</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/aboutme/gender">
+                <span class="col-50" style=" float :right ;text-align:right ">{{ user.gender }}</span>
+                <div class="col-center ">Gender</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" type="item-text-wrap" href="#/tab/me/aboutme/date">
+                <span class="col-50" style=" float :right ;text-align:right "> {{ user.birth | date:'MM dd yyyy'}}</span>
+                <div class="col-center ">Birthday</div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+           
+             </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

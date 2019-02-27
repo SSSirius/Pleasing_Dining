@@ -1,0 +1,25 @@
+<ion-view view-title="Feedbacks"  hide-tabs>
+    <ion-nav-bar class="bar-balanced bar-stable  bar ">
+        <ion-nav-back-button>
+            Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="stable-bg">
+        <ion-list>
+            <ion-item class=" item-divider item-borderless stable-bg">
+            </ion-item>
+            <label class="item item-input ">
+                <textarea type="text" placeholder="Please write down your feedbacks" style="min-height:200px;">{{reflect}}</textarea>
+            </label>
+        </ion-list>
+
+
+        <div class="padding">
+            <button class="button button-block button-balanced" ng-click="commit_ref(reflect)">
+                Submit
+            </button>
+
+        </div>
+    </ion-content>
+</ion-view>

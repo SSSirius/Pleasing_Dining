@@ -1,0 +1,72 @@
+<ion-modal-view style="min-height:310px" >
+
+    <div class="bar bar-header stable-border row mid green" style="height:30px;font-size:14px;">
+        <i class="icon ion-ios-arrow-left col-10 " ng-click="closeModal()" style="font-size:20px;"></i>
+            <div class="col-80 ">Add</div>
+        
+    </div>
+    
+    <ion-content class="stable-bg"  overflow-scroll="true" style="overflow: hidden;margin-top:30px;height:auto">
+        <div class="padding" style="position:relative">
+            <div class="item item-thumbnail-left item-borderless stable-bg" href="#">
+                <img ng-src="{{nowdish.face}}">
+                <h3 style="white-space: normal;">{{nowdish.name}}</h3>
+                <a class="row" href="#/tab/book/dish/{{nowdish.id}}" style=" text-decoration :none ;" ng-click="closeModal()">
+
+                    <p class="row col-bottom " style="color:#969696;font-size:12px;">
+                        <i class="icon ion-ios-arrow-right col-10 "></i>
+                        Details
+                    </p>
+                    </a>
+            </div>
+      </div>
+        <div class="light-bg row green" style="position:relative;margin-top:-10px;">
+            <div class="col col-33 mid " ng-class="isunit(0)?'green-bg':'green'">{{gram}}  g</div>
+            <div class=" col col-25 mid " ng-class="isunit(1)?'green-bg':'green'">{{set}}  dish</div>
+            <div class="col col-50 mid" >{{energy | number:1}}  Kcal.</div>
+        </div>
+        <div class="row  mid" style="margin:0px;position:fixed;padding-bottom:1px;bottom:0px;">
+            <div class="col col-75 " style="margin-top:5px;padding:0px;">
+                <div class="rowline light-bg" style="margin-bottom:1px;border-radius:5px;">
+                    <div class="row " style="padding:0px;">
+                        <div class="col calculator" ng-click="calculate(1)">1</div>
+                        <div class="col calculator" ng-click="calculate(2)">2</div>
+                        <div class="col calculator" ng-click="calculate(3)">3</div>
+                    </div>
+
+                    <div class="row" style="padding:0px;">
+                        <div class="col calculator" ng-click="calculate(4)">4</div>
+                        <div class="col calculator" ng-click="calculate(5)">5</div>
+                        <div class="col calculator" ng-click="calculate(6)">6</div>
+                    </div>
+
+                    <div class="row" style="padding:0px;">
+                        <div class="col calculator" ng-click="calculate(7)">7</div>
+                        <div class="col calculator" ng-click="calculate(8)">8</div>
+                        <div class="col calculator" ng-click="calculate(9)">9</div>
+                    </div>
+
+                    <div class="row" style="padding:0px;">
+                        <div class="col calculatorend" ng-click="point()" style="margin-bottom:0px;">.</div>
+                        <div class="col calculatorend" ng-click="calculate(0)" style="margin-bottom:0px;">0</div>
+                        <div class="col calculatorend" ng-click="clear()" style="margin-bottom:0px;"><i class="icon ion-ios-arrow-left "></i></div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="col col-25">
+                <div class="col light-bg  green" style="border-radius:5px;margin:5px;padding: 5px 0 5px 0;" ng-click="setunit(0)">g</div>
+                <div class="col light-bg  green" style="border-radius:5px;margin:5px;padding:5px 0 5px 0" ng-click="setunit(1)">dish</div>
+                <div class="col  green-bg" style=" border-radius:5px;margin:5px;padding:5px 0 5px 0" ng-click="adddish()">
+                    Save
+                </div>
+            </div>
+        </div>
+    </ion-content>
+   
+
+
+</ion-modal-view>
